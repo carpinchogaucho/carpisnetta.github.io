@@ -5,6 +5,12 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 });
 
 function playVideo() {
+  const sound = document.getElementById("click-sound");
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play().catch(e => console.warn("Autoplay bloqueado:", e));
+  }
+
   const container = document.querySelector(".video-container");
   container.innerHTML = `
     <iframe
