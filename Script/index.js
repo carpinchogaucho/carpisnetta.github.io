@@ -4,6 +4,10 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   alert("¡Gracias por tu mensaje! Me pondré en contacto pronto.");
 });
 
+function playVideo(url) {
+  window.open(url, "_blank");
+}
+
 function playVideo() {
   const sound = document.getElementById("click-sound");
   if (sound) {
