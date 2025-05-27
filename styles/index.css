@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-family: 'Poppins', sans-serif; 
   background-color: #121212;
   color: #f0f0f0;
   line-height: 1.6;
@@ -17,7 +17,7 @@ video {
   border-radius: 10px;
 }
 
-/* Estilos del header */
+
 header {
   background: linear-gradient(45deg, #00bfa6, #00ff88);
   padding: 4rem 2rem;
@@ -38,7 +38,7 @@ header p {
   font-size: 1.3rem;
 }
 
-/* Estilos de la sección principal */
+
 main {
   padding: 3rem 2rem;
   max-width: 1100px;
@@ -68,7 +68,7 @@ section {
   color: #e0e0e0;
 }
 
-/* Estilos de la vista previa de video */
+
 .video-container {
   width: fit-content;
   padding: 15px;
@@ -106,7 +106,7 @@ section {
   text-shadow: 2px 2px 8px #000;
 }
 
-/* Estilos del formulario de contacto */
+
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -149,7 +149,7 @@ section {
   background-color: #009e8a;
 }
 
-/* Estilos del footer */
+
 footer {
   background-color: #2d2d2d;
   padding: 1.5rem;
