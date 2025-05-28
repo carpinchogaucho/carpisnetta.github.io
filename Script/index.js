@@ -20,7 +20,7 @@ function playVideo() {
     <iframe
       width="560"
       height="315"
-      src="https://youtu.be/TNfCHBjewe0?si=5T0Md9rSUUK8yc0I"
+      src="https://www.youtube.com/embed/TNfCHBjewe0?autoplay=1"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
