@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre  = htmlspecialchars($_POST["nombre"]);
@@ -18,30 +18,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'maillerphp62@gmail.com'; 
-        $mail->Password   = 'zgwnnlgzpltcfabd';        
+        $mail->Password   = 'zgwnnlgzpltcfabd';       
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
 
-        
         $mail->setFrom('maillerphp62@gmail.com', 'Formulario Portafolio');
-        $mail->addAddress('c.carpincho.gaucho@gmail.com', 'Carpincho Gaucho');
+        $mail->addAddress('c.carpincho.gaucho@gmail.com', 'Carpincho Gaucho'); 
 
-        // Contenido
+        
+        $mail->addReplyTo($email, $nombre);
+
         $mail->isHTML(false);
         $mail->Subject = 'Nueva solicitud de comisión';
-        $mail->Body = "Nombre: $nombre\nEmail: $email\n\nMensaje:\n$mensaje";
+        $mail->Body    = "Nombre: $nombre\nCorreo: $email\n\nMensaje:\n$mensaje";
 
         $mail->send();
 
-        echo '<script>
-            alert("Mensaje enviado con éxito");
-            window.location.href = "../index.html";
-        </script>';
+        echo '<script>alert("Mensaje enviado con éxito."); window.location.href = "../index.html";</script>';
     } catch (Exception $e) {
-        echo '<script>
-            alert("Error al enviar: ' . addslashes($mail->ErrorInfo) . '");
-            window.history.back();
-        </script>';
+        echo '<script>alert("No se pudo enviar el mensaje. Error: ' . addslashes($mail->ErrorInfo) . '"); window.history.back();</script>';
     }
 }
 ?>

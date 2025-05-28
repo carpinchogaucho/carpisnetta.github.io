@@ -80,9 +80,11 @@
   <h2>Contacto</h2>
   <form id="contact-form" action="data/send_email.php" method="POST">
     <div id="form-response" style="margin-top: 1rem;"></div>
-    Email <input type="email" name = "email" value=""> <br>
-    <input type="text" name="nombre" placeholder="Tu nombre" required />
-    <textarea name="mensaje" placeholder="Contame qué querés para tu comisión" required></textarea>
+    
+    <input type="email" name="email" placeholder="Tu correo electrónico" required /><br>
+    <input type="text" name="nombre" placeholder="Tu nombre" required /><br>
+    <textarea name="mensaje" placeholder="Contame qué querés para tu comisión" required></textarea><br>
+    
     <button type="submit">Enviar</button>
   </form>
 </section>
