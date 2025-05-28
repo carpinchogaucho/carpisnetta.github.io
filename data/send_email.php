@@ -34,6 +34,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $mail->send();
 
+
+
+        $mailCliente = new PHPMailer(true);
+        $mailCliente->isSMTP();
+        $mailCliente->Host       = 'smtp.gmail.com';
+        $mailCliente->SMTPAuth   = true;
+        $mailCliente->Username   = 'maillerphp62@gmail.com';
+        $mailCliente->Password   = 'zgwnnlgzpltcfabd';
+        $mailCliente->SMTPSecure = 'ssl';
+        $mailCliente->Port       = 465;
+
+        $mailCliente->setFrom('maillerphp62@gmail.com', 'Carpincho Gaucho');
+        $mailCliente->addAddress($email, $nombre);
+
+        $mailCliente->isHTML(false);
+        $mailCliente->Subject = 'Gracias por tu mensaje 📨';
+
+        $mailCliente->Body = "¡Hola $nombre!\n\nGracias por contactarme y por tu interés en una comisión.\n\nRecibí tu mensaje y te voy a responder lo antes posible. Mientras tanto, si querés agregar más detalles o referencias, podés responder directamente a este correo.\n\nEste fue el mensaje que me enviaste:\n--------------------------\n$mensaje\n--------------------------\n\n¡Nos estamos hablando pronto!\n\nCarpincho Gaucho 🎨";
+
+        $mailCliente->send();
+
         echo '<script>alert("Mensaje enviado con éxito."); window.location.href = "../index.html";</script>';
     } catch (Exception $e) {
         echo '<script>alert("No se pudo enviar el mensaje. Error: ' . addslashes($mail->ErrorInfo) . '"); window.history.back();</script>';
