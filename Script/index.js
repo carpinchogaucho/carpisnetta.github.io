@@ -10,18 +10,15 @@ function playVideo(url) {
 
 function playVideo() {
   const sound = document.getElementById("click-sound");
-  if (sound) {
-    sound.currentTime = 0; 
-    sound.play().catch(e => console.warn("Autoplay bloqueado:", e));
-  }
+  if (sound) sound.play().catch(() => {});
 
-  const container = document.querySelector(".video-container");
+  const container = document.getElementById("yt-video-container");
   container.innerHTML = `
     <iframe
-      width="560"
-      height="315"
+      width="640"
+      height="360"
       src="https://www.youtube.com/embed/TNfCHBjewe0?autoplay=1"
-      title="YouTube video player"
+      title="YouTube video"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
