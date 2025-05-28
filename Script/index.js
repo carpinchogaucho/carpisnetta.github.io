@@ -33,26 +33,38 @@ function playVideo() {
 
 
   document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById('contact-form');
-  const responseElement = document.getElementById('form-response');
+  const form = document.getElementById("contact-form");
+  const responseElement = document.getElementById("form-response");
+  const submitButton = form.querySelector("button[type='submit']");
 
   if (form) {
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      
+      submitButton.disabled = true;
+      const originalText = submitButton.textContent;
+      submitButton.textContent = "Enviando...";
 
       const formData = new FormData(form);
 
       try {
         const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData
+          method: "POST",
+          body: formData,
         });
 
-        const text = await response.text();
-        responseElement.textContent = text;
+        const result = await response.text();
+        responseElement.textContent = result;
+        responseElement.style.color = "green";
         form.reset();
       } catch (error) {
-        responseElement.textContent = 'Hubo un error al enviar el formulario.';
+        responseElement.textContent = "Hubo un error al enviar el formulario.";
+        responseElement.style.color = "red";
+      } finally {
+        
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
       }
     });
   }
