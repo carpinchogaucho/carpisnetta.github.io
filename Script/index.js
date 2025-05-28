@@ -30,3 +30,30 @@ function playVideo() {
 }
   container.classList.remove("hidden");
   document.querySelector(".minecraft-video-preview").style.display = "none";
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById('contact-form');
+  const responseElement = document.getElementById('form-response');
+
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        const text = await response.text();
+        responseElement.textContent = text;
+        form.reset();
+      } catch (error) {
+        responseElement.textContent = 'Hubo un error al enviar el formulario.';
+      }
+    });
+  }
+});
