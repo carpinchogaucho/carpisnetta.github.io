@@ -8,19 +8,22 @@ function playVideo(url) {
   window.open(url, "_blank");
 }
 
-function playVideo() {
+function playVideo(clickedThumbnail) {
   const sound = document.getElementById("click-sound");
   if (sound) {
     sound.currentTime = 0;
     sound.play().catch(e => console.warn("Autoplay bloqueado:", e));
   }
 
-  const container = document.querySelector(".video-container");
+  
+  const container = clickedThumbnail.closest(".video-container");
+  if (!container) return;
+
   container.innerHTML = `
     <iframe
       width="560"
       height="315"
-      src="https://youtu.be/TNfCHBjewe0?si=-JZPHgHGtoV7Q1Fm"
+      src="https://www.youtube.com/embed/TNfCHBjewe0?autoplay=1"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -28,44 +31,3 @@ function playVideo() {
     ></iframe>
   `;
 }
-  container.classList.remove("hidden");
-  document.querySelector(".minecraft-video-preview").style.display = "none";
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const responseElement = document.getElementById("form-response");
-  const submitButton = form.querySelector("button[type='submit']");
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      
-      submitButton.disabled = true;
-      const originalText = submitButton.textContent;
-      submitButton.textContent = "Enviando...";
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.text();
-        responseElement.textContent = result;
-        responseElement.style.color = "green";
-        form.reset();
-      } catch (error) {
-        responseElement.textContent = "Hubo un error al enviar el formulario.";
-        responseElement.style.color = "red";
-      } finally {
-        
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      }
-    });
-  }
-});
