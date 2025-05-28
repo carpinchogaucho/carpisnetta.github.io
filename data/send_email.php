@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'portafolio.github.io\PHPmailer\src/Exception.php';
-require 'portafolio.github.io\PHPmailer\src/PHPMailer.php';
-require 'portafolio.github.io\PHPmailer\src/SMTP.php';
+require 'portafolio.github.io/PHPmailer/src/Exception.php';
+require 'portafolio.github.io/PHPmailer/src/PHPMailer.php';
+require 'portafolio.github.io/PHPmailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = htmlspecialchars($_POST['nombre']);
