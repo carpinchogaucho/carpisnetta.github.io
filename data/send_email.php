@@ -21,21 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();                                         
         $mail->Host       = 'smtp.gmail.com';                       
         $mail->SMTPAuth   = true;                                    
-        $mail->Username   = 'tu_correo@gmail.com';                   
-        $mail->Password   = 'tu_contraseña_o_app_password';        
+        $mail->Username   = 'maillerphp62@gmail.com';                   
+        $mail->Password   = 'zgwnnlgzpltcfabd';        
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;          
         $mail->Port       = 587;                                     
 
        
         $mail->setFrom($correo, $nombre);                            
-        $mail->addAddress('c.carpincho.gaucho@gmail.com', 'Mi Portafolio');  
+        $mail->addAddress('maillerphp62@gmail.com', 'Mi Portafolio');  
 
        
         $mail->isHTML(false);                                       
         $mail->Subject = 'Nuevo mensaje desde el formulario de contacto';
         $mail->Body    = "Nombre: $nombre\nCorreo: $correo\n\nMensaje:\n$mensaje";
 
-        
+       
+
         $mail->send();
         echo 'Mensaje enviado con éxito';
     } catch (Exception $e) {
