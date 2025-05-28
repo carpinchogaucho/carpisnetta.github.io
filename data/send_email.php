@@ -26,7 +26,7 @@ if(isset($_POST["send"])){
 
         $mail->isHTML(true);
         $mail->Subject = 'Nueva solicitud de comisión';
-        $mail->Body    = "Nombre: $nombre\n\nMensaje:\n$mensaje";
+        $mail->Body    = $_POST["message"]
 
 
          $mail->send();
