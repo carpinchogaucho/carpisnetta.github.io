@@ -11,7 +11,7 @@ function playVideo(url) {
 function playVideo() {
   const sound = document.getElementById("click-sound");
   if (sound) {
-    sound.currentTime = 0; // Reinicia
+    sound.currentTime = 0; 
     sound.play().catch(e => console.warn("Autoplay bloqueado:", e));
   }
 
