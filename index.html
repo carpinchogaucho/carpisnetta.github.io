@@ -1,98 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio de minecraft</title>
-  <link rel="stylesheet" href="styles/index.css" />
-  <link rel="icon" href="images/icon.ico" type="image/x-icon" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carpisnetta.me</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="background"></div>
+  <canvas id="particles"></canvas>
+
   <header>
-    <h1>Mi Portafolio de Desarrollo Minecraft</h1>
-    <p>Mods y Plugins personalizados para Minecraft Java Edition</p>
+    <img src="media/carpisnetta.png" alt="Foto de perfil" class="profile-pic">
+    <h1>carpisnetta</h1>
+    <p>Desarrollador | Amante del Rock </p>
+    <div class="socials">
+     <a href="https://twitter.com/dev_carpincho" target="_blank"><i class="fab fa-twitter"></i></a>
+     <a href="https://instagram.com/ale.lexo" target="_blank"><i class="fab fa-instagram"></i></a>
+     <a href="https://github.com/carpinchogaucho" target="_blank"><i class="fab fa-github"></i></a>
+     <a href="https://open.spotify.com/user/h69mjpdzptibqd4vzbke29wvg?si=1437af152fd04ea8" target="_blank"><i class="fab fa-spotify"></i></a>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>Sobre mí</h2>
-      <p>Soy desarrollador especializado en crear mods y plugins para Minecraft utilizando Fabric y Paper. Experto en renderizados personalizados, animaciones, entidades y más.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Proyectos destacados</h2>
-      
-      <div class="project">
-        <h3>Mod: NoCapes</h3>
-        <p>Mod client-side que elimina las capas de minecraft para eventos.</p>
-      </div>
-
-      <div class="project">
-        <h3>Plugin: Perfectamente equilibrado</h3>
-        <p>Minijuego creado para el evento GEO WARE ODDYSEY de ALDO GEO.</p>
-
-        <h4>Vista previa en video</h4>
-        <div class="video-container">
-          <video width="640" controls>
-            <source src="media/perfectamente_equilibrado.mp4" type="video/mp4" />
-            Tu navegador no soporta la reproducción de video.
-          </video>
-        </div>
-        <audio id="click-sound" src="media/click.ogg" preload="auto"></audio>
-      </div>
-
-      <div class="project">
-        <h3>Plugin: hunting for love</h3>
-        <p>Juego del evento Stealing Hearts de LilithLuvsYa.</p>
-
-        <h4>Vista previa en video</h4>
-       <div class="video-container" id="yt-video-container">
-       <img
-       src="https://img.youtube.com/vi/TNfCHBjewe0/hqdefault.jpg"
-       alt="Miniatura del video"
-       class="thumbnail"
-        onclick="playVideo()"
-       />
-      </div>
-      <audio id="click-sound" src="media/click.ogg" preload="auto"></audio>
-      </div>
-    </section>
-
-    <section id="social-links">
-      <h2>Sígueme</h2>
-      <div class="social-buttons">
-        
-        <a href="https://github.com/carpinchogaucho" target="_blank">
-          <button class="social-btn github-btn">
-            <i class="fab fa-github"></i> GitHub
-          </button>
-        </a>
-
-       
-        <a href="https://x.com/dev_carpincho" target="_blank">
-          <button class="social-btn twitter-btn">
-            <i class="fab fa-twitter"></i> Twitter
-          </button>
-        </a>
-      </div>
-    </section>
-
-    <section id="comments">
-  <h2>Comentarios</h2>
-  <script src="https://utteranc.es/client.js"
-        repo="carpinchogaucho/portafolio.github.io"
-        issue-term="contacto"
-        label="contacto"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
-</script>
-</section>
-  </main>
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy un apasionado de la programación, la música y los videojuegos.  
+      Me inspiro en el rock para crear cosas únicas.  
+      Actualmente estoy trabajando en ScreamingLAB.
+    </p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 - Desarrollador Minecraft</p>
+    <p>© 2024 carpisnetta. Página creada con amor y música 🎶</p>
   </footer>
 
   <script src="Script/index.js"></script>
